@@ -25,9 +25,9 @@ class Prototipo extends Controller
         $phpversion = new \stdClass();
         $phpversion->label = 'Versión de PHP';
         $phpversion->status = false;
-        $phpversion->required = '>= 5.5.9';
+        $phpversion->required = '>= 5.4';
         $phpversion->message = phpversion();
-        if (version_compare(PHP_VERSION, '5.5.9') >= 0) {
+        if (version_compare(PHP_VERSION, '5.4') >= 0) {
             $phpversion->status = true;
         }
         array_push($tests, $phpversion);
