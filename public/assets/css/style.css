@@ -1,0 +1,105 @@
+/* GLOBAL */
+
+body {
+    background-color: #718484;
+    font-family: Roboto, sans-serif;
+}
+
+.space-15 {
+    width: 100%;
+    height: 15px;
+}
+
+.space-30 {
+    width: 100%;
+    height: 30px;
+}
+
+.container {
+    background-color: white;
+}
+
+.breadcrumb {
+    background-color: #e8e8e8;
+}
+
+/* BASE */
+
+.title h1 {
+    font-weight: 300;
+}
+
+form input[Type=text],
+form input[Type=password],
+form input[Type=email]{
+    max-width: 500px;
+}
+
+
+/* HEADER */
+
+.header {
+    height: 70px;
+    background-color: #222222;
+}
+
+.header-frame {
+    height: 100%;
+    background-color: transparent;
+}
+
+.header .logo-img {
+    height: 40px;
+    width: auto;
+    margin-top: 15px;
+}
+
+.header .user-info {
+    text-align: right;
+    margin-top: 20px;
+}
+.header .user-info a,
+.header .user-info a:link,
+.header .user-info a:visited,
+.header .user-info a:hover,
+.header .user-info a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.header .user-info a:hover {
+    color: #dddddd;
+}
+
+
+.header .user-info .nickname {
+    color: #008efe;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.header .user-info .controls {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+/* CREATE */
+
+
+
+
+/* LIST */
+
+.col-icon {
+    width: 35px;
+}
+
+.fa {
+    font-size: 20px;
+}
+
+.fa-folder {
+    color: #cec12c;
+    text-shadow: 1px 1px 1px #5a5a5a;
+}
