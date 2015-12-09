@@ -1,0 +1,48 @@
+body {
+    font-family: DejaVuSans, monospace;
+    font-size: 18px;
+    color: #2d2d2d;
+}
+.header {
+    display: block;
+    height: 50px;;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.header-img {
+    float: left;
+    width: auto;
+    height: 60px;
+    margin: auto 0;
+}
+.header-title {
+    float: right;
+    text-align: right;
+    line-height: 20px;
+    font-size: 18px;;
+    text-transform: uppercase;
+}
+table {
+    border-collapse: collapse;
+    font-size: 13px;
+    width: 100%;
+    border: solid 1px #2d2d2d;
+}
+th {
+    padding: 5px;
+    color: white;
+    background-color: #2d2d2d;
+    font-weight: 400;
+    text-align: left;
+}
+td {padding: 3px 0 2px 5px; }
+tbody {
+    padding: 5px;
+}
+.subject { width: 100%; }
+.fixed-header { width: 200px; }
+.haberes { width: 48%; float:left; }
+.descuentos { width: 48%; float:right; }
+.parcial { background-color: #bfc3c6; }
+.final { font-weight: bold; }
+.totales { width: 100%; margin-top: 30px;}
