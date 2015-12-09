@@ -1,7 +1,7 @@
 /* GLOBAL */
 
 body {
-    background-color: #718484;
+    background-color: #fdfdfe;
     font-family: Roboto, sans-serif;
 }
 
@@ -23,6 +23,13 @@ body {
     background-color: #e8e8e8;
 }
 
+.box {
+    background-color: #fcfcfc;
+    border: solid 1px #ddd;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
 /* BASE */
 
 .title h1 {
@@ -39,19 +46,17 @@ form input[Type=email]{
 /* HEADER */
 
 .header {
-    height: 70px;
-    background-color: #222222;
+    height: 110px;
 }
 
 .header-frame {
     height: 100%;
-    background-color: transparent;
 }
 
 .header .logo-img {
-    height: 40px;
+    height: 90px;
     width: auto;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .header .user-info {
@@ -63,7 +68,7 @@ form input[Type=email]{
 .header .user-info a:visited,
 .header .user-info a:hover,
 .header .user-info a:active {
-    color: white;
+    color: #0030b4;
     text-decoration: none;
 }
 
@@ -79,8 +84,9 @@ form input[Type=email]{
 }
 
 .header .user-info .controls {
-    font-size: 12px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 20px;
 }
 
 
@@ -102,4 +108,32 @@ form input[Type=email]{
 .fa-folder {
     color: #cec12c;
     text-shadow: 1px 1px 1px #5a5a5a;
+}
+
+.navbar .container-fluid {
+    background-color: #0030b4;
+}
+
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:link,
+.navbar-default .navbar-nav>li>a:visited,
+.navbar-default .navbar-nav>li>a:active {
+    color: rgb(206, 224, 248);
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: rgb(206, 224, 248);
+    background-color: #3162e3;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+    background-color: #3162e3;
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Roboto Condensed", sans-serif;
 }

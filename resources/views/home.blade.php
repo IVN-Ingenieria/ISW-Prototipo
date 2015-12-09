@@ -1,17 +1,33 @@
-@extends('app')
+@extends('layouts.base')
 
 @section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
 
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
+
+
+<div class="container">
+	<div class="space-30"></div>
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>Características habilitadas (en desarrollo)</h2>
+		</div>
+	</div>
+	<div class="space-30"></div>
+	<div class="row box">
+		<div class="col-sm-12">
+			<h4>Módulo de auntentificación</h4>
+			<ul class="list-unstyled">
+				<li><a href="{{URL::to('auth/login')}}">Conectarse (sólo funciona si se está desconectado)</a></li>
+				<li><a href="{{URL::to('auth/logout')}}">Desconectarse</a></li>
+				<li><a href="{{URL::to('auth/register')}}">Registrar nuevo usuario</a></li>
+			</ul>
+			<div class="space-15"></div>
+			<h4>Módulo reportes</h4>
+			<ul class="list-unstyled">
+				<li><a href="{{URL::to('reportes')}}">Generar informes de remuneraciones</a></li>
+			</ul>
 		</div>
 	</div>
 </div>
+
+
 @endsection
