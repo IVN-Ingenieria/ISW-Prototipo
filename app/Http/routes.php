@@ -25,6 +25,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('reportes', ['uses'=>'Reportes@index', 'middleware' => 'auth']);
-Route::get('reportes/todos', ['uses'=>'Reportes@generate_all', 'middleware' => 'auth']);
-Route::get('reportes/{id}', ['uses'=>'Reportes@generate', 'as'=>'reporte', 'middleware' => 'auth']);
+Route::get('report', ['uses'=>'Reportes@index', 'middleware' => 'auth']);
+Route::get('report/list', ['uses'=>'Reportes@index', 'middleware' => 'auth']);
+Route::get('report/generate/todos', ['uses'=>'Reportes@generate_all', 'middleware' => 'auth']);
+Route::get('report/generate/{id}', ['uses'=>'Reportes@generate', 'as'=>'reporte', 'middleware' => 'auth']);
+Route::get('report/show/{id}', ['uses' => 'Reportes@show', 'as' => 'show-report', 'middleware' => 'auth']);

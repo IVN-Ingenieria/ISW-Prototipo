@@ -121,7 +121,14 @@ class Reportes extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        $data = Dummy::worker($id);
+        $report = new Report('Diciembre', '2015');
+        $report->setWorker($data);
+        $ds = DIRECTORY_SEPARATOR;
+        $gp = str_replace('/index.php', '', url('assets'.$ds.'generator').$ds);
+
+        return view('templates.reportes.details', ['gp'=>$gp, 'report'=>$report, 'render'=>true, 'id'=>$id]);
+        //return view('templates.reportes.report', ['gp'=>$gp, 'report'=>$report, 'id'=>$id]);
 	}
 
 	/**

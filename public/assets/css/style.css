@@ -30,6 +30,10 @@ body {
     padding-bottom: 15px;
 }
 
+.pull-right {
+    margin-right: 15px;
+}
+
 /* BASE */
 
 .title h1 {
@@ -99,10 +103,6 @@ form input[Type=email]{
 
 .col-icon {
     width: 35px;
-}
-
-.fa {
-    font-size: 20px;
 }
 
 .fa-folder {

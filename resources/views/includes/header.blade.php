@@ -1,7 +1,7 @@
 <div class="container header-frame">
     <div class="row">
         <div class="logo col-sm-6">
-            {!! Html::image('assets/images/ipc-logo.png', 'IPC Logo', ['class' => 'logo-img']) !!}
+            <a href="{{ URL::to('/') }}">{!! Html::image('assets/images/ipc-logo.png', 'IPC Logo', ['class' => 'logo-img']) !!}</a>
         </div>
         <div class="col-sm-6 user-info">
             <div class="space-15"></div>

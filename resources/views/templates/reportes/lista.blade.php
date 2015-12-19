@@ -33,7 +33,6 @@
                         <th>AFP</th>
                         <th>Isapre</th>
                         <th>Informe</th>
-                        <th>Opciones</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -45,8 +44,14 @@
                         <td>{!! Common::getFormattedAmount($worker->salary) !!}<br><a href="#">[modificar]</a></td>
                         <td>{{$worker->afp}}<br><a href="#">[modificar]</a></td>
                         <td>{{$worker->isapre}}<br><a href="#">[modificar]</a></td>
-                        <td><i class="fa fa-check-circle" style="color: green"></i>&nbsp;&nbsp;<a href="#">[ver informe]</a> </td>
-                        <td><a href="{{ URL::to('reportes/'.$worker->id) }}" class="btn btn-success btn-sm" role="button">Descargar PDF</a> </td>
+                        <td>
+                            <a href="{{ URL::to('report/show/'.$worker->id) }}" class="btn btn-default btn-sm" role="button">
+                                <span class="fa fa-search fa-lg"></span> Revisar
+                            </a>
+                            <a href="{{ URL::to('report/generate/'.$worker->id) }}" class="btn btn-primary btn-sm" role="button">
+                                <span class="fa fa-download fa-lg"></span>
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>

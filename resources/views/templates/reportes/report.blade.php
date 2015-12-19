@@ -1,13 +1,9 @@
-<html>
-<head>
-
-</head>
-<body>
-
-    <div class="header">
+    @if(empty($render) || !$render)
+    <div class="report-header">
         <img class="header-img" src="{{$gp}}ipc-logo.png">
         <div class="header-title">Planilla de remuneraciones<br>{{$report->month}} {{$report->year}}</div>
     </div>
+    @endif
     <div class="subject">
         <table>
             <thead>
@@ -26,7 +22,6 @@
             </tbody>
         </table>
     </div>
-    <br>
     <div class="haberes">
         <table>
             <thead>
@@ -63,7 +58,7 @@
             </tbody>
         </table>
     </div>
-    <div class="descuentos">
+    <div class="descuentos" @if(!empty($render) && $render)style="margin-right: 30px;"@endif>
         <table>
             <thead>
             <tr>
@@ -127,6 +122,3 @@
             </tbody>
         </table>
     </div>
-
-</body>
-</html>
