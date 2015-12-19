@@ -23,7 +23,7 @@
 			<div class="space-15"></div>
 			<h4>Módulo de trabajadores</h4>
 			<ul class="list-unstyled">
-				<li><a href="{{URL::to('reportes')}}">Operaciones disponibles</a></li>
+				<li><a href="{{URL::to('report')}}">Operaciones disponibles</a></li>
 			</ul>
 		</div>
 	</div>
