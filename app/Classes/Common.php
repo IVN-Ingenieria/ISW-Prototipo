@@ -51,35 +51,4 @@ class Common
         return '$'.str_replace(',', '.', number_format($amount));
     }
 
-    /*
-     * <li class="active"><a href="{{URL::to('home')}}">Inicio <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Usuarios </a></li>
-                    <li><a href="{{URL::to('report')}}">Reportes </a></li>
-                    <li><a href="#">Administración </a></li>
-     */
-    public static function getNavMenuObject($active)
-    {
-        $menu = '';
-        $template = '<li%ACTIVE%><a href="%URL%">%LABEL%</a>%CURRENT%</li>';
-        $elements = array(
-            ['inicio', URL::to('home')],
-            ['usuarios', '#'],
-            ['reportes', URL::to('report')],
-            ['administración', '#']
-        );
-        foreach ($elements as $key => $value) {
-            $tag = $template;
-            if ($active == $key) {
-                $tag = str_replace('%ACTIVE%', ' class="active"', $tag);
-                $tag = str_replace('%CURRENT%', '<span class="sr-only">(current)</span>', $tag);
-            } else {
-                $tag = str_replace('%ACTIVE%', '', $tag);
-                $tag = str_replace('%CURRENT%', '', $tag);
-            }
-            $tag = str_replace('%URL%', $value[1], $tag);
-            $tag = str_replace('%LABEL%', $value[0], $tag);
-            $menu .= $tag;
-        }
-        return $menu;
-    }
 }

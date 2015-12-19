@@ -7,7 +7,7 @@
         <div class="row">
             <div class="space-15 col-sm-12"></div>
             <div class="col-sm-12">
-                <h2>Operaciones de usuario</h2>
+                <h2>Operaciones para gestión de pagos</h2>
             </div>
             <div class="space-30 col-sm-12"></div>
         </div>
@@ -19,7 +19,7 @@
             </div>
             <div class="col-sm-6">
                 <div style="float: right">
-                    <a href="#" class="btn btn-info" role="button"><i class="fa fa-list"></i> Planillas de pago a Isapre</a>
+                    <a href="{{ URL::to('report/xml') }}" class="btn btn-info" role="button"><i class="fa fa-list"></i> Planillas de pago a Isapre</a>
                     <a href="#" class="btn btn-primary" role="button"><span class="fa fa-download fa-lg"></span> Descargar todos</a>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="space-15 col-sm-12"></div>
             <div class="col-sm-12">
                 <div style="float: right">
-                    <a href="#" class="btn btn-info" role="button"><i class="fa fa-list"></i> Planillas de pago a Isapre</a>
+                    <a href="{{ URL::to('report/xml') }}" class="btn btn-info" role="button"><i class="fa fa-list"></i> Planillas de pago a Isapre</a>
                     <a href="#" class="btn btn-primary" role="button"><span class="fa fa-download fa-lg"></span> Descargar todos</a>
                 </div>
             </div>

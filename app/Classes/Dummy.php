@@ -11,10 +11,10 @@ class Dummy
 {
 
     protected static $worker_list = array(
-        [1, 1234567, 'Manuel Jara', 523441, 2, 'Cuprum', 'Masvida'],
-        [2, 9564712, 'Mauricio Hass', 1524111, 0, 'Cuprum', 'Cruz Blanca'],
-        [3, 14873002, 'Javiera Figueroa', 291440, 0, 'Habitat', 'Masvida'],
-        [4, 16542889, 'Geraldinne Koch', 400000, 1, 'Capital', 'Fonasa'],
+        [1, 1234567, 'Manuel Jara', 523441, 2, 'Cuprum', 'Masvida', 23514],
+        [2, 9564712, 'Mauricio Hass', 1524111, 0, 'Cuprum', 'Cruz Blanca', 15442],
+        [3, 14873002, 'Javiera Figueroa', 291440, 0, 'Habitat', 'Masvida', 45222],
+        [4, 16542889, 'Geraldinne Koch', 400000, 1, 'Capital', 'Fonasa', 32554],
     );
 
     /**
@@ -42,10 +42,7 @@ class Dummy
     {
         $output = array();
         foreach (self::$worker_list as $worker) {
-            array_push(
-                $output,
-                self::createWorkerObject($worker)
-            );
+            array_push($output, self::createWorkerObject($worker));
         }
         return $output;
     }
@@ -65,7 +62,8 @@ class Dummy
             'salary' => $worker[3],
             'family' => $worker[4],
             'afp' => $worker[5],
-            'isapre' => $worker[6]
+            'isapre' => $worker[6],
+            'isapre_val' => $worker[7]
         );
     }
 }

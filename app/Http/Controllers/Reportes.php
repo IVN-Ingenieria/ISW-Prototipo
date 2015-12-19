@@ -52,6 +52,28 @@ class Reportes extends Controller {
 		exit();
 	}
 
+    public function xmlReport()
+    {
+        $workers = Dummy::workers();
+        $isapres = [];
+        $meta = array(
+            'count' => 0,
+            'total' => 0
+        );
+        foreach ($workers as $worker) {
+            if (array_key_exists($worker->isapre, $isapres)) {
+                $isapres[$worker->isapre]['amount'] += $worker->isapre_val;
+                $isapres[$worker->isapre]['count']++;
+            } else {
+                $isapres[$worker->isapre]['amount'] = $worker->isapre_val;
+                $isapres[$worker->isapre]['count'] = 1;
+            }
+            $meta['count']++;
+            $meta['total'] += $worker->isapre_val;
+        }
+        return view('templates.reportes.xml', ['current'=> 2, 'isapres'=>$isapres, 'meta'=>$meta]);
+    }
+
     /**
      * CONSTRUYENDO (no usar)
      */
@@ -85,10 +107,6 @@ class Reportes extends Controller {
         echo $filename;
         \Zipper::make($filename)->add($files);
         File::deleteDirectory(storage_path($time).$ds.$time);
-
-
-
-
 
         exit();
     }
