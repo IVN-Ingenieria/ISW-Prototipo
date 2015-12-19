@@ -147,6 +147,7 @@ return [
 
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Collective\Html\HtmlServiceProvider',
+		'Chumper\Zipper\ZipperServiceProvider',
 
 	],
 
@@ -198,6 +199,10 @@ return [
 
         'Html'      => 'Collective\Html\HtmlFacade',
         'Form'      => 'Collective\Html\FormFacade',
+		'Zipper' 	=> 'Chumper\Zipper\Zipper',
+		'Common'	=> 'App\Classes\Common',
+		'Report'	=> 'App\Classes\Report',
+		'Dummy'		=> 'App\Classes\Dummy',
 
 	],
 

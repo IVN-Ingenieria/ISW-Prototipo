@@ -11,10 +11,7 @@
 |
 */
 
-//Route::get('/', 'Prototipo@index');
 Route::get('/', 'HomeController@index');
-Route::post('store', 'Prototipo@store');
-Route::get('delete/{id}', 'Prototipo@destroy');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -28,5 +25,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('reportes', 'Reportes@index');
-Route::get('reportes/{id}', ['uses'=>'Reportes@generate', 'as'=>'reporte']);
+Route::get('reportes', ['uses'=>'Reportes@index', 'middleware' => 'auth']);
+Route::get('reportes/todos', ['uses'=>'Reportes@generate_all', 'middleware' => 'auth']);
+Route::get('reportes/{id}', ['uses'=>'Reportes@generate', 'as'=>'reporte', 'middleware' => 'auth']);

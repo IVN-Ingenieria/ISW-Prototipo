@@ -7,32 +7,62 @@
         <div class="row">
             <div class="space-15 col-sm-12"></div>
             <div class="col-sm-12">
-                <h2>Generar informes de remuneraciones</h2>
+                <h2>Operaciones de usuario</h2>
             </div>
             <div class="space-30 col-sm-12"></div>
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="float: right">
+                    <a href="#" class="btn btn-primary" role="button">Descargar todos los PDF</a>
+                    <a href="#" class="btn btn-info" role="button">Generar XML</a>
+                    <a href="#" class="btn btn-info disabled" role="button">Enviar XML</a>
+                </div>
+                <div class="space-15 col-sm-12"></div>
+            </div>
+        </div>
         <div class="row box">
             <div class="col-sm-12">
-                <table class="table table-hover" style="max-width: 600px;">
+                <table class="table table-hover">
                     <thead>
                     <tr>
                         <th>Rut</th>
                         <th>Nombre</th>
+                        <th>Familia</th>
+                        <th>Contrato</th>
+                        <th>AFP</th>
+                        <th>Isapre</th>
                         <th>Informe</th>
+                        <th>Opciones</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($data as $user)
+                    @foreach($workers as $worker)
                     <tr>
-                        <td>{{$user->rut}}</td>
-                        <td>{{$user->name}}</td>
-                        <td><a href="{{ URL::to('reportes/'.$user->id) }}" class="btn btn-success" role="button">Generar</a> </td>
+                        <td>{!! Common::getFormattedRut($worker->rut) !!}</td>
+                        <td>{{$worker->name}}</td>
+                        <td>{{$worker->family}} cargas<br><a href="#">[modificar]</a></td>
+                        <td>{!! Common::getFormattedAmount($worker->salary) !!}<br><a href="#">[modificar]</a></td>
+                        <td>{{$worker->afp}}<br><a href="#">[modificar]</a></td>
+                        <td>{{$worker->isapre}}<br><a href="#">[modificar]</a></td>
+                        <td><i class="fa fa-check-circle" style="color: green"></i>&nbsp;&nbsp;<a href="#">[ver informe]</a> </td>
+                        <td><a href="{{ URL::to('reportes/'.$worker->id) }}" class="btn btn-success btn-sm" role="button">Descargar PDF</a> </td>
                     </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
-            <div class="space-30 col-sm-12"></div>
+            <div class="space-15 col-sm-12"></div>
+        </div>
+        <div class="row">
+            <div class="space-15 col-sm-12"></div>
+            <div class="col-sm-12">
+                <div style="float: right">
+                    <a href="#" class="btn btn-primary" role="button">Descargar todos los PDF</a>
+                    <a href="#" class="btn btn-info" role="button">Generar XML</a>
+                    <a href="#" class="btn btn-info disabled" role="button">Enviar XML</a>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

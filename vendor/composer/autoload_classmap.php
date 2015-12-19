@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Classes\\Common' => $baseDir . '/app/Classes/Common.php',
+    'App\\Classes\\Dummy' => $baseDir . '/app/Classes/Dummy.php',
     'App\\Commands\\Command' => $baseDir . '/app/Commands/Command.php',
     'App\\Console\\Commands\\Inspire' => $baseDir . '/app/Console/Commands/Inspire.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -17,7 +19,6 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\Prototipo' => $baseDir . '/app/Http/Controllers/Prototipo.php',
     'App\\Http\\Controllers\\Reportes' => $baseDir . '/app/Http/Controllers/Reportes.php',
-    'App\\Http\\Controllers\\WelcomeController' => $baseDir . '/app/Http/Controllers/WelcomeController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -46,6 +47,11 @@ return array(
     'CGIFLZW' => $vendorDir . '/mpdf/mpdf/classes/gif.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
+    'Chumper\\Zipper\\Facades\\Zipper' => $vendorDir . '/chumper/zipper/src/Chumper/Zipper/Facades/Zipper.php',
+    'Chumper\\Zipper\\Repositories\\RepositoryInterface' => $vendorDir . '/chumper/zipper/src/Chumper/Zipper/Repositories/RepositoryInterface.php',
+    'Chumper\\Zipper\\Repositories\\ZipRepository' => $vendorDir . '/chumper/zipper/src/Chumper/Zipper/Repositories/ZipRepository.php',
+    'Chumper\\Zipper\\Zipper' => $vendorDir . '/chumper/zipper/src/Chumper/Zipper/Zipper.php',
+    'Chumper\\Zipper\\ZipperServiceProvider' => $vendorDir . '/chumper/zipper/src/Chumper/Zipper/ZipperServiceProvider.php',
     'ClassPreloader\\Application' => $vendorDir . '/classpreloader/classpreloader/src/Application.php',
     'ClassPreloader\\ClassList' => $vendorDir . '/classpreloader/classpreloader/src/ClassList.php',
     'ClassPreloader\\ClassLoader' => $vendorDir . '/classpreloader/classpreloader/src/ClassLoader.php',
@@ -63,6 +69,7 @@ return array(
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateTrabajadoresTable' => $baseDir . '/database/migrations/2015_12_14_152708_create_trabajadores_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/mtdowling/cron-expression/src/Cron/CronExpression.php',

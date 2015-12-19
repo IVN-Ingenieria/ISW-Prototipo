@@ -53,7 +53,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Ingresar</button>
 
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Olvidaste tu contraseña??</a>
+								<a class="btn btn-link" href="{{ url('/auth/register') }}">Registrar nuevo usuario</a>
 							</div>
 						</div>
 					</form>

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Classes\Report;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -7,6 +8,10 @@ use App\User;
 use Illuminate\Http\Request;
 use mPDF;
 use Html;
+use URL;
+use File;
+use Carbon\Carbon;
+use App\Classes\Dummy;
 
 class Reportes extends Controller {
 
@@ -17,30 +22,76 @@ class Reportes extends Controller {
 	 */
 	public function index()
 	{
-		$data = User::all();
-		return view('templates.reportes.lista', ['data'=>$data]);
+		//$data = User::all();
+		$workers = Dummy::workers();
+		return view('templates.reportes.lista', ['workers'=>$workers]);
 	}
 
+    /**
+     * Genera un reporte a partir de la ID de un usuario
+     *
+     * @param int $id La ID del usuario que se desea obtener
+     */
 	public function generate($id)
 	{
-		$data = User::find($id);
-		$mpdf=new mPDF("en", "Letter", "15");
+		//$data = User::find($id);
+		$data = Dummy::worker($id);
+        $report = new Report('Diciembre', '2015');
+        $report->setWorker($data);
+
 		$ds = DIRECTORY_SEPARATOR;
-		$gp = public_path().$ds.'assets'.$ds.'generator'.$ds;
+		$gp = str_replace('/index.php', '', url('assets'.$ds.'generator').$ds);
+
+
+		$mpdf=new mPDF("en", "Letter", "15");
 		$stylesheet = file_get_contents($gp.'liquidacion.css');
-		$html = file_get_contents($gp.'liquidacion.php');
+		$html = view('templates.reportes.report', ['gp'=>$gp, 'report'=>$report])->render();
 		$mpdf->WriteHTML($stylesheet, 1);
-		$mpdf->WriteHTML(
-				str_replace(
-						['%GP%', '%NOMBRE%', '%RUT%', '%CARGO%'],
-						[$gp, $data->name, $data->rut, '-'],
-						$html
-				),
-				2
-		);
-		$mpdf->Output();
+		$mpdf->WriteHTML($html,	2);
+		$mpdf->Output('planilla-'.$data->rut.'-'.str_replace(' ', '_', $data->name).'-12-15'.'.pdf', 'D');
 		exit();
 	}
+
+    /**
+     * CONSTRUYENDO (no usar)
+     */
+    public function generate_all()
+    {
+        $data = User::all();
+        $ds = DIRECTORY_SEPARATOR;
+        $gp = str_replace('/index.php', '', url('assets'.$ds.'generator').$ds);
+        $stylesheet = file_get_contents($gp.'liquidacion.css');
+        $html = file_get_contents($gp.'liquidacion.php');
+        $time = time();
+        mkdir(storage_path($time), 777);
+
+        foreach ($data as $user) {
+            $mpdf=new mPDF("en", "Letter", "15");
+            $mpdf->WriteHTML($stylesheet, 1);
+            $mpdf->WriteHTML(
+                str_replace(
+                    ['%GP%', '%NOMBRE%', '%RUT%', '%CARGO%'],
+                    [$gp, $user->name, $user->rut, '-'],
+                    $html
+                ),
+                2
+            );
+            $mpdf->Output(storage_path($time.'/planilla-'.$user->rut.'-'.str_replace(' ', '_', $user->name).'-12-15'.'.pdf'), 'F');
+        }
+
+        $mytime = Carbon::now();
+        $files = glob(storage_path($time.$ds.'*'));
+        $filename = str_replace([' ', ':'], ['_', '-'], storage_path().$ds.$mytime->toDateTimeString().'.zip');
+        echo $filename;
+        \Zipper::make($filename)->add($files);
+        File::deleteDirectory(storage_path($time).$ds.$time);
+
+
+
+
+
+        exit();
+    }
 
 	/**
 	 * Show the form for creating a new resource.

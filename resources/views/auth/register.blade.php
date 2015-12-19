@@ -33,60 +33,11 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">RUT</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="rut" value="{{ old('rut') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
 						</div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Teléfono 1</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="phone_1" value="{{ old('phone_1') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Teléfono 2</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="phone_2" value="{{ old('phone_2') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Calle</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="address_street" value="{{ old('address_street') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Número</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="address_number" value="{{ old('address_number') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Información adicional</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="address_extra" value="{{ old('address_extra') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">Ciudad</label>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="address_city" value="{{ old('address_city') }}">
-                            </div>
-                        </div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Contraseña</label>

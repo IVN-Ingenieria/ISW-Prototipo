@@ -21,9 +21,9 @@
 				<li><a href="{{URL::to('auth/register')}}">Registrar nuevo usuario</a></li>
 			</ul>
 			<div class="space-15"></div>
-			<h4>Módulo reportes</h4>
+			<h4>Módulo de trabajadores</h4>
 			<ul class="list-unstyled">
-				<li><a href="{{URL::to('reportes')}}">Generar informes de remuneraciones</a></li>
+				<li><a href="{{URL::to('reportes')}}">Operaciones disponibles</a></li>
 			</ul>
 		</div>
 	</div>
