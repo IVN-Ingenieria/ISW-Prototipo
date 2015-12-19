@@ -12,18 +12,22 @@
             <div class="space-30 col-sm-12"></div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
-                <div style="float: right">
-                    <a href="#" class="btn btn-primary" role="button">Descargar todos los PDF</a>
-                    <a href="#" class="btn btn-info" role="button">Generar XML</a>
-                    <a href="#" class="btn btn-info disabled" role="button">Enviar XML</a>
+            <div class="col-sm-6">
+                <div class="input-group"> <span class="input-group-addon">Filtrar lista</span>
+                    <input id="filter" type="text" class="form-control" placeholder="Escriba aquí...">
                 </div>
-                <div class="space-15 col-sm-12"></div>
             </div>
+            <div class="col-sm-6">
+                <div style="float: right">
+                    <a href="#" class="btn btn-info" role="button"><i class="fa fa-list"></i> Planillas de pago a Isapre</a>
+                    <a href="#" class="btn btn-primary" role="button"><span class="fa fa-download fa-lg"></span> Descargar todos</a>
+                </div>
+            </div>
+            <div class="col-sm-12"><div class="space-30 col-sm-12"></div></div>
         </div>
-        <div class="row box">
+        <div class="row">
             <div class="col-sm-12">
-                <table class="table table-hover">
+                <table class="table table-hover box">
                     <thead>
                     <tr>
                         <th>Rut</th>
@@ -35,7 +39,7 @@
                         <th>Informe</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="searchable">
                     @foreach($workers as $worker)
                     <tr>
                         <td>{!! Common::getFormattedRut($worker->rut) !!}</td>
@@ -63,11 +67,29 @@
             <div class="space-15 col-sm-12"></div>
             <div class="col-sm-12">
                 <div style="float: right">
-                    <a href="#" class="btn btn-primary" role="button">Descargar todos los PDF</a>
-                    <a href="#" class="btn btn-info" role="button">Generar XML</a>
-                    <a href="#" class="btn btn-info disabled" role="button">Enviar XML</a>
+                    <a href="#" class="btn btn-info" role="button"><i class="fa fa-list"></i> Planillas de pago a Isapre</a>
+                    <a href="#" class="btn btn-primary" role="button"><span class="fa fa-download fa-lg"></span> Descargar todos</a>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+
+            (function ($) {
+
+                $('#filter').keyup(function () {
+
+                    var rex = new RegExp($(this).val(), 'i');
+                    $('.searchable tr').hide();
+                    $('.searchable tr').filter(function () {
+                        return rex.test($(this).text());
+                    }).show();
+
+                })
+
+            }(jQuery));
+
+        });
+    </script>
 @endsection

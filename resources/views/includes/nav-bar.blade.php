@@ -8,7 +8,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{URL::to('home')}}">Inicio <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Usuarios </a></li>
-                    <li><a href="{{URL::to('reportes')}}">Reportes </a></li>
+                    <li><a href="{{URL::to('report')}}">Reportes </a></li>
                     <li><a href="#">Administración </a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
