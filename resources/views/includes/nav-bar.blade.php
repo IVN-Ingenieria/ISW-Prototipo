@@ -1,15 +1,13 @@
-
+    <?php
+        if (empty($current)) $current = 0;
+    ?>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{URL::to('home')}}">Inicio <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Usuarios </a></li>
-                    <li><a href="{{URL::to('report')}}">Reportes </a></li>
-                    <li><a href="#">Administración </a></li>
+                    {!! Common::getNavMenuObject($current) !!}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

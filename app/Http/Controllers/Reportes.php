@@ -24,7 +24,7 @@ class Reportes extends Controller {
 	{
 		//$data = User::all();
 		$workers = Dummy::workers();
-		return view('templates.reportes.lista', ['workers'=>$workers]);
+		return view('templates.reportes.lista', ['workers'=>$workers, 'current'=>2]);
 	}
 
     /**
@@ -127,7 +127,7 @@ class Reportes extends Controller {
         $ds = DIRECTORY_SEPARATOR;
         $gp = str_replace('/index.php', '', url('assets'.$ds.'generator').$ds);
 
-        return view('templates.reportes.details', ['gp'=>$gp, 'report'=>$report, 'render'=>true, 'id'=>$id]);
+        return view('templates.reportes.details', ['gp'=>$gp, 'report'=>$report, 'render'=>true, 'id'=>$id, 'current'=>2]);
         //return view('templates.reportes.report', ['gp'=>$gp, 'report'=>$report, 'id'=>$id]);
 	}
 
