@@ -32,3 +32,5 @@ Route::get('report/generate/{id}', ['uses'=>'Reportes@generate', 'as'=>'reporte'
 Route::get('report/show/{id}', ['uses' => 'Reportes@show', 'as' => 'show-report', 'middleware' => 'auth']);
 
 Route::get('report/xml', ['uses' => 'Reportes@xmlReport', 'as' => 'xml-report', 'middleware' => 'auth']);
+
+Route::resource('afp','AfpController');
