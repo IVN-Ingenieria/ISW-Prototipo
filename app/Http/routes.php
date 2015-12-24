@@ -34,3 +34,16 @@ Route::get('report/show/{id}', ['uses' => 'Reportes@show', 'as' => 'show-report'
 Route::get('report/xml', ['uses' => 'Reportes@xmlReport', 'as' => 'xml-report', 'middleware' => 'auth']);
 
 Route::resource('afp','AfpController');
+
+
+Route::get('lista', 'ControladorTrabajadores@index');
+Route::get('lista/crear', 'ControladorTrabajadores@create');
+Route::get('lista/ver/{id}', 'ControladorTrabajadores@show');
+Route::post('lista', 'ControladorTrabajadores@store');
+
+Route::get('usuarios/crear', 'UsuariosController@create');
+Route::get('usuarios/mostrar', 'UsuariosController@show');
+Route::get('usuarios/actualizar', 'UsuariosController@update');
+Route::get('usuarios/borrar', 'UsuariosController@delete');
+
+Route::resource('usuarios','UsuariosController');
